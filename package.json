@@ -1,0 +1,16 @@
+{
+  "name": "@jl-org/ts-tool",
+  "version": "0.0.1",
+  "description": "TS的实用工具，以及类型体操",
+  "main": "./src/index.ts",
+  "files": ["./src"],
+  "scripts": {
+
+  },
+  "keywords": ["ts-tool", "jl-ts-tool", "jl-org"],
+  "author": "CJL",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  }
+}
