@@ -1,6 +1,14 @@
 export type StrAndNum = string | number
 /** 所有键值对 */
 export type AllRecord = Record<keyof any, any>
+/** 所有函数 */
+export type AllFn = (...args: any[]) => any
+/** 所有类构造器 */
+export type AllClass = new (...args: any[]) => any
+
+/**
+ * =================================================================================
+ */
 
 /** 深度只读 */
 export type DeepReadonly<T extends AllRecord> = {
@@ -37,7 +45,7 @@ export type UnPacked<T> =
     never
 
 /** 首个函数参数 */
-export type FirstArg<T extends (...args: any[]) => any> = Parameters<T>[0]
+export type FirstArg<T extends AllFn> = Parameters<T>[0]
 
 
 /* 部分可选 */
