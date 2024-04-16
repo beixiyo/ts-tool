@@ -34,14 +34,11 @@ export type RemoveReadonly<T extends AllRecord> = {
  * =================================================================================
  */
 
-/* 获取最深层次的 Promise 类型 */
-type PromiseType<T> = T extends Promise<infer E> ? PromiseType<E> : T
-
 /** 究极解包，支持获取`数组 | 函数返回值 | Promise<Promise<...>>` 里的类型 */
 export type UnPacked<T> =
     T extends (infer E)[] ? E :
     T extends (...args: any[]) => infer R ? R :
-    T extends Promise<infer E> ? PromiseType<E> :
+    T extends Promise<any> ? Awaited<T> :
     never
 
 /** 首个函数参数 */
