@@ -2,7 +2,7 @@
 
 ## 安装
 ```bash
-npm i @jl-org/ts-tool
+npm i -D @jl-org/ts-tool
 ```
 
 ## 使用
