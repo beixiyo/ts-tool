@@ -4,7 +4,7 @@ export type AllRecord = Record<keyof any, any>
 /** 所有函数 */
 export type AllFn = (...args: any[]) => any
 /** 所有类构造器 */
-export type AllClass = new (...args: any[]) => any
+export type AllClass = abstract new (...args: any[]) => any
 
 /**
  * =================================================================================
