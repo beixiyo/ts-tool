@@ -5,7 +5,10 @@
 npm i -D @jl-org/ts-tool
 ```
 
-## 使用
+## 目录
+- [工具](#工具)
+- [数组工具](#数组工具)
+- [字符串工具](#字符串工具)
 
 **全都有文档注释**
 
@@ -28,7 +31,7 @@ type NestedPromise = Promise<Promise<Promise<string>>>
 
 ---
 
-#### 工具
+### 工具
 ```ts
 import type {
     DeepReadonly,
@@ -91,7 +94,7 @@ type PickReadonlyKeysO = PickReadonlyKeys<Readonly<O>>  // "a" | "b" | "c" | "d"
 type PickPropTypeO = PickPropType<O, 'd.e'>  // { f: any }
 ```
 
-#### 数组工具
+### 数组工具
 ```ts
 import type {
     FirstArr,
@@ -110,7 +113,7 @@ type Pop = PopArr<Arr>  // [string, number, boolean]
 type Reverse = ReverseArr<Arr>  // [{ e: { f: any } }, boolean, number, string]
 ```
 
-#### 字符串工具
+### 字符串工具
 ```ts
 import type {
     SplitStr,

@@ -10,6 +10,7 @@ export type AllClass = abstract new (...args: any[]) => any
  * =================================================================================
  */
 
+
 /** 深度只读 */
 export type DeepReadonly<T extends AllRecord> = {
     readonly [K in keyof T]: DeepReadonly<T[K]>
@@ -34,6 +35,7 @@ export type RemoveReadonly<T extends AllRecord> = {
  * =================================================================================
  */
 
+
 /** 究极解包，支持获取`数组 | 函数返回值 | Promise<Promise<...>>` 里的类型 */
 export type UnPacked<T> =
     T extends (infer E)[] ? E :
@@ -55,6 +57,7 @@ export type PartRequired<T, K extends keyof T> = Required<Pick<T, K>> & Omit<T, 
  * =================================================================================
  */
 
+
 export type Getters<T> = {
     [K in keyof T as `get${Capitalize<K & string>}`]: () => unknown
 }
@@ -68,6 +71,7 @@ export type GetterAndSetters<T> = Getters<T> & Setters<T>
 /**
  * =================================================================================
  */
+
 
 export type Equal<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ? 1 : 2
     ? true
@@ -95,3 +99,16 @@ export type PickPropType<T, Path extends string> = string extends Path
     ? PickPropType<T[K], R>
     : unknown : unknown
 
+
+/**
+ * 联合转交叉
+ * @example
+ * type Demo = UnionToIntersect<{ a: string } | { b: number }>
+ */
+export type UnionToIntersect<T> = (
+    T extends any
+    ? (x: T) => any
+    : never
+) extends (x: infer R) => any
+    ? R
+    : never

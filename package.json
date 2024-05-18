@@ -1,7 +1,7 @@
 {
     "name": "@jl-org/ts-tool",
-    "version": "0.0.5",
-    "description": "TS的实用工具，以及类型体操",
+    "version": "0.0.6",
+    "description": "Typescript 的实用泛型工具，以及类型体操",
     "main": "./src/index.ts",
     "module": "./src/index.ts",
     "type": "module",
