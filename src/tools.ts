@@ -99,6 +99,12 @@ export type PickPropType<T, Path extends string> = string extends Path
     ? PickPropType<T[K], R>
     : unknown : unknown
 
+/**
+ * 获取对象的所有属性，排除函数
+ */
+export type PickProps<T extends object> = {
+    [K in keyof T as T[K] extends Function ? never : K]: T[K]
+}
 
 /**
  * 联合转交叉

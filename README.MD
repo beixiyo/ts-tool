@@ -92,6 +92,9 @@ type PickReadonlyKeysO = PickReadonlyKeys<Readonly<O>>  // "a" | "b" | "c" | "d"
 
 /** 取出结构体某个类型 */
 type PickPropTypeO = PickPropType<O, 'd.e'>  // { f: any }
+
+/** 获取对象的所有属性，排除函数 */
+type PickAllPropO = PickProps<O>
 ```
 
 ### 数组工具
