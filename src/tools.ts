@@ -1,6 +1,6 @@
 export type StrAndNum = string | number
 /** 所有键值对 */
-export type AllRecord = Record<keyof any, any>
+export type AllRecord<T = any> = Record<keyof any, T>
 /** 所有函数 */
 export type AllFn = (...args: any[]) => any
 /** 所有类构造器 */
